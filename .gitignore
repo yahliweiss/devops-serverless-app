@@ -1,0 +1,17 @@
+# CDK
+infrastructure/cdk.out/
+infrastructure/.venv/
+.cdk.staging/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# Misc
+response.json

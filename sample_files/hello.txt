@@ -1,0 +1,2 @@
+Hello from the DevOps Serverless App sample files.
+This file is uploaded to S3 automatically during CDK deployment.

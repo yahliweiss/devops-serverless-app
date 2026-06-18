@@ -1,0 +1,5 @@
+{
+  "project": "devops-serverless-app",
+  "purpose": "sample data uploaded to S3 via CDK BucketDeployment",
+  "items": ["alpha", "beta", "gamma"]
+}
