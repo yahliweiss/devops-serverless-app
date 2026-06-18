@@ -15,3 +15,6 @@ venv/
 
 # Misc
 response.json
+REQUIREMENTS.md
+CLAUDE.md
+.claude/
