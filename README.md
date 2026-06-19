@@ -34,6 +34,7 @@ read-only access to **this** bucket, and publish access to **this** topic only.
 | `lambda/handler.py` | Lambda function code |
 | `sample_files/` | Files uploaded to S3 during deployment |
 | `scripts/invoke_lambda.py` | Manual test script (invokes the Lambda) |
+| `scripts/test_handler_edge_cases.py` | Offline unit tests (mocked AWS) for the handler |
 | `.github/workflows/deploy.yml` | GitHub Actions workflow (manual deploy) |
 
 ## Tools & Frameworks
@@ -130,6 +131,18 @@ aws lambda invoke --function-name <FunctionName> response.json && cat response.j
 ```
 
 (`<FunctionName>` is the `FunctionName` value from the `cdk deploy` outputs.)
+
+### Offline unit tests (no AWS account needed)
+
+The handler's edge-case and error-handling behavior is covered by a fully mocked
+unit-test suite — useful for catching regressions before deploying:
+
+```bash
+pip install -r scripts/requirements.txt
+python scripts/test_handler_edge_cases.py
+```
+
+It exits non-zero if any case fails, so it can also gate CI.
 
 ## Cleanup
 
